@@ -5,6 +5,20 @@
 In this project, I used AWS CloudFormation to deploy a fully functional EC2 web server. Instead of manually launching an instance and configuring it through the AWS Management Console, the entire infrastructure—including the EC2 instance, Security Group, and web server installation—was defined declaratively in a CloudFormation template.
 
 The template automatically provisions an Amazon Linux 2023 EC2 instance, installs Apache HTTP Server using UserData, configures the service to start at boot, and publishes the website's public URL as a CloudFormation output.
+---
+## Deployment Result
+
+The CloudFormation template successfully provisioned all required resources. The stack reached the **CREATE_COMPLETE** state, confirming that the EC2 instance, Security Group, and associated resources were deployed successfully.
+
+### CloudFormation Stack
+
+![CloudFormation Stack](screenshots/stack-create-complete.png)
+
+### Stack Outputs
+
+The Outputs section displays the automatically generated public IP address and website URL.
+
+![CloudFormation Outputs](screenshots/cloudformation-outputs.png)
 
 ---
 
@@ -32,22 +46,25 @@ The template automatically provisions an Amazon Linux 2023 EC2 instance, install
 ## Architecture
 
 ```text
-CloudFormation
-        │
-        ▼
-Security Group
-        │
-        ▼
-EC2 Instance
-        │
-        ▼
-UserData Script
-        │
-        ▼
-Apache Web Server
-        │
-        ▼
-Website Accessible via Public IP
+                    AWS CloudFormation
+                           │
+                           ▼
+                Creates Security Group
+                           │
+                           ▼
+                 Launches EC2 Instance
+                           │
+                           ▼
+              Executes UserData Script
+                           │
+                           ▼
+            Installs Apache HTTP Server
+                           │
+                           ▼
+             Hosts Static HTML Web Page
+                           │
+                           ▼
+             Accessible via Public IP
 ```
 
 ---
@@ -69,6 +86,20 @@ This project introduced several important CloudFormation concepts:
 After updating the InstanceType from **t3.micro** to **t3.small**, CloudFormation replaced the EC2 instance because changing the instance type required resource replacement. As a result, the Public IP address also changed.
 
 This demonstrates how CloudFormation determines whether a property can be updated in place or whether the resource must be recreated.
+
+---
+## Web Server Verification
+
+After waiting a few minutes for the UserData script to complete, Apache HTTP Server was installed automatically and the web page became accessible through the public IP address.
+
+![Web Server](screenshots/website-homepage.png)
+
+---
+## EC2 Instance
+
+The deployed EC2 instance is visible in the EC2 console with the instance type specified in the CloudFormation template.
+
+![EC2 Instance](screenshots/ec2-instance.png)
 
 ---
 
