@@ -12,7 +12,7 @@ The CloudFormation template successfully provisioned all required resources. The
 
 ### CloudFormation Stack
 
-![CloudFormation Stack](screenshoots/stack-create-complete.png)
+![CloudFormation Stack](screenshoots/stack-creat-complete.png)
 
 ### Stack Outputs
 
