@@ -82,20 +82,17 @@ Instead of silently succeeding, it now:
 Example implementation:
 
 ```python
-elif event["RequestType"] == "Delete":
-    ami_id = event.get("ResourceProperties", {}).get("AmiId", "Unknown")
-    print(f"Delete request received.")
-    print(f"Cleaning up AMI reference: {ami_id}")
-
-    send_response(
-        event,
-        context,
-        "SUCCESS",
-        {"DeletedAmiId": ami_id}
-    )
+ elif event["RequestType"] in ("Delete"):
+        ami_id = ami_id = event["PhysicalResourceId"]
+        print("Delete request received.")
+        print("Cleaning up AMI reference: "+ ami_id)
+        send_response(event, context, "SUCCESS", {})
+else:
+        send_response(event, context, "SUCCESS", {})
 ```
 
 This doesn't delete the AMI because the Lambda did not create it. Instead, it demonstrates proper lifecycle management and produces an audit trail in CloudWatch Logs.
+
 
 ---
 
