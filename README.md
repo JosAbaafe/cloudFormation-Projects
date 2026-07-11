@@ -89,10 +89,12 @@ Example implementation:
         send_response(event, context, "SUCCESS", {})
 else:
         send_response(event, context, "SUCCESS", {})
+
 ```
 
 This doesn't delete the AMI because the Lambda did not create it. Instead, it demonstrates proper lifecycle management and produces an audit trail in CloudWatch Logs.
 
+![Delete Event](screenshots/delete-event.png)
 
 ---
 
