@@ -190,28 +190,6 @@ Before deploying these templates, ensure you have:
 
 ---
 
-# Deployment
-
-Deploy any template using the AWS CLI:
-
-```bash
-aws cloudformation deploy \
-  --template-file template.yaml \
-  --stack-name my-stack \
-  --capabilities CAPABILITY_NAMED_IAM
-```
-
-For nested stacks:
-
-```bash
-aws cloudformation deploy \
-  --template-file root.yaml \
-  --stack-name nested-stack \
-  --capabilities CAPABILITY_NAMED_IAM
-```
-
----
-
 # Key CloudFormation Concepts Demonstrated
 
 * Infrastructure as Code
@@ -236,12 +214,6 @@ These labs demonstrate the progression from creating basic AWS infrastructure to
 # Author
 
 **Emmanuel Abaafe**
-
-MPhil Computer Science
-
-Regulatory Administrative Officer
-
-National Communications Authority (NCA)
 
 ---
 
