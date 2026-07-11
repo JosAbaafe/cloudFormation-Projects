@@ -34,10 +34,6 @@ Throughout these labs, the following CloudFormation concepts are demonstrated:
 ```text
 CloudFormation-Labs/
 │
-├── Level-3-VPC/
-│   ├── template.yaml
-│   └── README.md
-│
 ├── Level-5-WebServer/
 │   ├── template.yaml
 │   └── README.md
