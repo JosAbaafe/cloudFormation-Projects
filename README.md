@@ -59,31 +59,6 @@ CloudFormation-Labs/
 
 # Project Summaries
 
-## Level 3 – VPC Infrastructure
-
-### Objective
-
-Deploy a custom Virtual Private Cloud (VPC) using CloudFormation.
-
-### Resources Created
-
-* VPC
-* Internet Gateway
-* Public Subnet
-* Route Table
-* Route
-* Route Table Association
-
-### Skills Learned
-
-* Networking fundamentals
-* CIDR block configuration
-* Internet connectivity
-* CloudFormation Outputs
-* Resource dependencies
-
----
-
 ## Level 5 – Web Server Deployment
 
 ### Objective
